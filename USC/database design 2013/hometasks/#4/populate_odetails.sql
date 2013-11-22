@@ -1,0 +1,9 @@
+insert into odetails values (1020, 10506, 1);
+insert into odetails values (1020, 10507, 1);
+insert into odetails values (1020, 10508, 2);
+insert into odetails values (1020, 10509, 3);
+insert into odetails values (1021, 10601, 4);
+insert into odetails values (1022, 10601, 1);
+insert into odetails values (1022, 10701, 1);
+insert into odetails values (1023, 10800, 1);
+insert into odetails values (1023, 10900, 1);

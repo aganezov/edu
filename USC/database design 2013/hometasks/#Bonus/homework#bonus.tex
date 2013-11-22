@@ -1,0 +1,1093 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[landscape, top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{longtable}
+\usepackage{cite}
+\usepackage{tikz}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\author{Sergey Aganezov}
+\title{Homework assignment \#Bonus \\ CSCE $520$ \\ ``Database Management Systems'' \\ Fall $2013$}
+\date{}
+
+\begin{document}
+	% \maketitle
+	\setcounter{page}{15}
+	\setcounter{table}{9}
+		\begin{center}
+			\begin{longtable}{|c|c|c|c|c|c|}
+			% \label{tab:1.a}
+			\caption{2.1} \\ 
+			\hline
+			\hline
+			Record\# & title & artist & type & release date & price \\ 
+			\hline
+				\phantom{1} & & & & &  \\
+			\hline
+				\phantom{1} & & & & &  \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|c|}
+			% \label{tab:1.a}
+			\caption{buyers} \\ 
+			\hline
+			\hline
+			buyer name & buyer phone  \\ 
+			\hline
+				\phantom{1} &   \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+			\begin{center}
+			\begin{longtable}{|c|c|c|c|c|c|}
+			% \label{tab:1.a}
+			\caption{2.2} \\ 
+			\hline
+			\hline
+			Record\# & location room & location shelf & location position \\ 
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|}
+			% \label{tab:1.a}
+			\caption{2.3} \\ 
+			\hline
+			\hline
+			buyer name & buyer phone  \\ 
+			\hline
+				\phantom{1} &   \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &   \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &   \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &   \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &   \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|c|}
+			% \label{tab:1.a}
+			\caption{2.4} \\ 
+			\hline
+			\hline
+			buyer name & time of purchase & record\#  \\ 
+			\hline
+				\phantom{1} & &   \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  &  \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  &  \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+			\phantom{1} &  & \\
+			\hline
+				\phantom{1} &  & \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|c|c|c|c|}
+			% \label{tab:1.a}
+			\caption{moving record one to room 3, shelf 3} \\ 
+			\hline
+			\hline
+			Record\# & location room & location shelf & location position \\ 
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\phantom{1} & & &  \\
+			\hline
+				\phantom{1} & & &  \\
+			\hline
+			\hline
+		\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|c|c|c|c|}
+			% \label{tab:1.a}
+			\caption{Changing type of record \#2 to country} \\ 
+			\hline
+			\hline
+			Record\# & title & artist & type & release date & price \\ 
+			\hline
+				\phantom{1} & & & & &  \\
+			\hline
+				\phantom{1} & & & & &  \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+
+		\begin{center}
+			\begin{longtable}{|c|c|c|}
+			% \label{tab:1.a}
+			\caption{adding buyer address} \\ 
+			\hline
+			\hline
+			buyer name & buyer address  \\ 
+			\hline
+				\phantom{1} &   \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &   \\
+			\hline
+			\phantom{1} &  \\
+			\hline
+				\phantom{1} &  \\
+			\hline
+			\hline
+			\end{longtable}
+		\end{center}
+	% \newpage
+		
+		
+	% 	\begin{center}
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.a.a} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+	% \newpage
+		
+	% 	\begin{center}
+		
+	% 	% \label{tab:1.b}
+
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+	% 		\caption{1.a.b} \\
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+
+	% \newpage
+	% \begin{center}
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.b.a} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+
+	% 		\newpage
+		
+	% 	\begin{center}
+		
+	% 	% \label{tab:1.b}
+
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+	% 		\caption{1.b.b} \\
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+
+
+	% 		\newpage
+		
+		
+	% 	\begin{center}
+	% 		\begin{longtable}{|c|c|c|c|C{1.5cm}|c|C{2cm}|C{2cm}|C{2cm}|c|c|C{2cm}|C{2cm}|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.b.c.1} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & buyer address & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+	% \newpage
+
+	% \begin{center}
+	% 		\begin{longtable}{|c|c|c|c|C{1.5cm}|c|C{2cm}|C{2cm}|C{2cm}|c|c|C{2cm}|C{2cm}|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.b.c.2} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position &  buyer name & buyer phone & buyer address & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+
+	% \newpage
+
+	% 	\begin{center}
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.c.c.1} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+	% \newpage
+
+	% \begin{center}
+	% 		\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|}
+	% 		% \label{tab:1.a}
+	% 		\caption{1.c.c.2} \\ 
+	% 		\hline
+	% 		\hline
+	% 		Record\# & title & artist & type & release date & price & location room & location shelf & location position & time of purchase \\ 
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 			\phantom{1} & & & & & & & & & \\
+	% 		\hline
+	% 		\end{longtable}
+	% 	\end{center}
+\end{document}

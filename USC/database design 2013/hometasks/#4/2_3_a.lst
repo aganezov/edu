@@ -1,0 +1,14 @@
+SQL> start 2_3_a
+
+PNAME                                                                           
+------------------------------                                                  
+Land Before Time III                                                            
+Dirty Harry                                                                     
+Land Before Time IV                                                             
+When Harry Met Sally                                                            
+Land Before Time I                                                              
+Land Before Time II                                                             
+
+6 rows selected.
+
+SQL> spool off

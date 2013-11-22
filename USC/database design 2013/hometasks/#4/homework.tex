@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{tikz}
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#4$ \\ CSE 520 ``Database Management Systems'' \\ Fall 2013}
+\date{}
+
+\newenvironment{problem}[1][\unskip]%
+{\centering\textbf{ #1}%
+\vspace{0.5cm}
+\begin{em}}%
+{\end{em}}
+
+\newenvironment{answer}%
+{\begin{framed}%
+\vspace{0.5cm}}%
+{\end{framed}\vspace{0.5cm}}
+
+\lstdefinestyle{customSQL}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  % frame=L,
+  xleftmargin=\parindent,
+  language=SQL,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!blue},
+  commentstyle=\itshape\color{black!40},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Part 1}
+	\begin{problem}[Implement the Mail-Order Database described on page 8 (From Oracle 10G Programming: A Primer text book)]
+		\begin{enumerate}
+			\item  Create relation schemas and the appropriate constraints for each table
+			\item  Insert tuples into the relations according to Figure 1.4 (page 9)
+		\end{enumerate}
+	\end{problem}
+	\begin{answer}
+		\begin{enumerate}
+			\item We are going to use oracle \emph{start} command in order to execute \textbf{*.sql} files. \textbf{*.lst} files used as session-capture-output will be listed to demostrate the workflow and intermidiate steps and results.
+
+			First, let us list the \textbf{*.sql} files that were used for table creation:
+			\begin{itemize}
+				\item \textbf{create\_zipcodes.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_zipcodes.sql}
+
+				\item \textbf{create\_parts.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_parts.sql}
+
+				\item \textbf{create\_employees.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_employees.sql}
+
+				\item \textbf{create\_customers.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_customers.sql}
+
+				\item \textbf{create\_orders.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_orders.sql}				
+
+				\item \textbf{create\_odetails.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{create_odetails.sql}		
+			\end{itemize}
+
+			and now the \textbf{.lst file} with the workflow, that uses described scripts:
+
+			\lstinputlisting[language=SQL, style=customSQL]{table_creation.lst}
+
+			\item here we are going again first write some \textbf{.sql} scripts and then run them with a help of command \textbf{start} from \textbf{sqlplus}.
+
+			\begin{itemize}
+				\item \textbf{populate\_zipcodes.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_zipcodes.sql}		
+
+				\item \textbf{populate\_employees.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_employees.sql}		
+
+				\item \textbf{populate\_customers.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_customers.sql}		
+				
+				\item \textbf{populate\_parts.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_parts.sql}		
+
+				\item \textbf{populate\_orders.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_orders.sql}		
+
+				\item \textbf{populate\_odetails.sql}
+				\lstinputlisting[language=SQL, style=customSQL]{populate_odetails.sql}		
+			\end{itemize}
+
+			and again, to demostrate that all those scripts do work correctly we are going to use \textbf{.lst file} to show the workflow with those scripts:
+
+			\lstinputlisting[language=SQL, style=customSQL]{table_population.lst}		
+		\end{enumerate}
+	\end{answer}
+
+	\newpage
+	\section{Part 2}
+	\begin{problem}[Complete the follwoing tasks (From Oracle 10G Programming: A Primer text book)]
+		\begin{enumerate}
+			\item Page 89, exercises 2.3. a, c, f, j, n
+			\item Page 91, exercises 2.6. a, c, d, f
+		\end{enumerate}
+	\end{problem}
+
+	\begin{answer}
+		\begin{enumerate}
+			\item We are going to save commands for each exercise in separate \textbf{.sql} and then run them with \textbf{start} command
+				\begin{enumerate}
+					\item Get the names of parts that cost less then \$20.00
+
+					\textbf{2\_3\_a.sql}
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_a.sql}
+
+					and its result:
+
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_a.lst}		
+					\setcounter{enumii}{2}
+					\item  Get tha pairs of customer number values of customers having the same zip zode.
+
+					\textbf{2\_3\_c.sql}
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_c.sql}
+
+					and its result:
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_c.lst}
+
+					\setcounter{enumii}{5}	
+					\item Get the names of customers who have ordered \emph{all} parts costing less than \$20.00
+
+					\textbf{2\_3\_f.sql}
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_f.sql}
+
+					and its result:
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_f.lst}
+
+					\setcounter{enumii}{9}
+					\item Get the names of customers who have placed the most expensive orders.
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_j_answer.sql}
+
+					and its result:
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_j.lst}
+
+					\setcounter{enumii}{13}
+					\item Get the names of customers who had to wait the longest for their orders to be shipped.
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_n.sql}
+
+					and its result:
+					\lstinputlisting[language=SQL, style=customSQL]{2_3_n.lst}
+				\end{enumerate}
+
+
+			\item We are going to save commands for each exercise in separate .sql and then run them with start command. Also we're going to user \textbf{rollback} command after each alternation, to see the result for starting database, not alternated one.
+
+			\begin{enumerate}
+				\item Decrease by $15\%$ the prices of all parts that cost less than \$$20.00$.
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_a.sql}
+
+				ans it's result:
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_a.lst}
+
+				\setcounter{enumii}{2}
+				\item Decrese by \$$10.00$ the price of parts that cost more than the average price of all parts.
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_c.sql}
+
+				and its result:
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_c.lst}
+
+
+				\item Transfer all the orders belonging the employee with \textbf{eno} = $1000$ to the employee with \textbf{eno} = $1001$
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_d.sql}
+
+				and it's result:
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_d.lst}
+
+				\setcounter{enumii}{5}
+				\item Delete all the orders fo employees with the minimum sales. \textbf{N.B.} it's important to notice, that when we created the table ``ODETAILS'' we did not specify what to do ``ON DELETE'' with foreign key \textbf{ono}, that references ``orders'' table. We cad drop current constraint (\emph{referencing}) and then add new constraint for \textbf{ono} foreighn key, that specifies ``ON DELETE CASCADE'', which will be very usefull for this task. After all costraint alternations are done:
+
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_f.sql}
+
+				and it's result:
+				\lstinputlisting[language=SQL, style=customSQL]{2_6_f.lst}				
+			\end{enumerate}
+		\end{enumerate}
+	\end{answer}
+
+	is any of the answers seem to be not fully supported with required justification -- please, let me know, so I can clarify and defend the approaches I took.
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{minted}
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#1$ \\ CSE 520 ``Database Management Systems'' \\ Fall 2013}
+
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Was not able to achieve this. Still was not signed up for the course (international student office has not performed the rest of the paperwork: must be completed until September $15$, 2013).
+		\item ``ACID'' stands for the abbreviation, that defines several properties of transactions (single or a multiple database operations, that must be executed automatically and isolated form other operations).
+		\begin{itemize}
+			\item \textbf{A} -- represents atomicity; quality, that represents \emph{``all-or-nothing''} paradigm of transaction. Either all operations in the transaction will be completed successfully, or none of the operations in transaction will take effect on the database.
+			\item \textbf{C} -- consistency. All operations in transaction must preserve consistency (as expectations about relations among data elements) of the database.
+			\item \textbf{I} -- does for isolation. It says, all operations in transactions should be executed while no other transactions are executed at the same time.
+			\item \textbf{D} -- durability. Simply states, if transaction was executed, result of such execution must never be lost, and all the changes to the database elements must be present once the transaction execution has finished.
+		\end{itemize}
+		\item \emph{Primary key} for the entry can be declared during the ``CREATE TABLE'' stage with two following ways:
+		
+			
+		
+		
+		\begin{enumerate}
+			\item 	\begin{minted}{sql}
+					CREATE TABLE Student (
+					    name CHAR(30) PRIMARY KEY,
+					    address VARCHAR(255),
+					    gender CHAR(1)
+					);
+					\end{minted}	
+			\item   \begin{minted}{sql}
+					CREATE TABLE Student (
+					    name CHAR(30),
+					    address VARCHAR(255),
+					    gender CHAR(1),
+					    PRIMARY KEY (name)
+						);	
+					\end{minted}
+		\end{enumerate}
+		even knowing both this approaches do the same thing, there's one key difference: first approach lets one to specify exactly \textbf{$1$} attribute to be a \emph{primary key}, while the second approach might be used in order to set a tuple of attributes as a \emph{primary key} (e.g. \textbf{primary key(name, address)}).
+
+		Now to the difference between \emph{primary} keys and \emph{unique} keys. There are several things to consider:
+		\begin{enumerate}
+			\item every \emph{primary} key is \emph{unique}, but not every \emph{unique} key is primary.
+			\item primary key column (set) \textbf{can not} be null, while unique field can
+			\item table can have only on primary key (field or even as a set, but only one), but more than one unique field
+		\end{enumerate}
+
+		usually primary key is used to uniquely identify the whole table row, while unique field is set in order to prevent duplicates in specified field for table rows. While no duplicates are allowed for unique field it still can be assigned to the \textbf{null} value if needed. And more than one row an have a null value in a unique field. Other than this, there might be some more differences in \emph{unique} and \emph{primary} keys, but those differences will base on the implementation of database's engines.
+	\end{enumerate}
+
+	
+		
+	
+		
+\end{document}

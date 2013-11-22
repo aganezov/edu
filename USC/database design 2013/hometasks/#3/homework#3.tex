@@ -1,0 +1,196 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{framed}
+
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ra}{\rightarrow}
+
+\newenvironment{problem}[1][\unskip]%
+{\centering\textbf{ #1}%
+
+\vspace{0.5cm}
+\begin{em}}%
+{\end{em}}
+
+\newenvironment{answer}%
+{\begin{framed}%
+\vspace{0.5cm}}%
+{\end{framed}\vspace{0.5cm}}
+
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#3$ \\ CSE 520 \\ ``Database Management Systems'' \\ Fall 2013}
+\date\
+
+\begin{document}
+	\maketitle
+	\newpage
+	\begin{problem}[Exercise 3.2.1 (page 83) from Ullman and Widom: A First Course in Database Systems]
+
+		Consider a relation with schema $R(A,B,C,D)$ and FD's $AB \ra C$, $C \ra D$ and $D \ra A$.
+		\begin{description}
+		\item[a)] What are all the nontrivial FD's that follow from the given FD's? You should restrict
+		\item[b)] What are all the keys of R?
+		\item[c)] What are all the superkeys for R that are not keys?
+		\end{description}
+	\end{problem}
+	\begin{answer}
+		\begin{description}
+			\item[a)] Nontrivial FDs are the FDs that satisfy the following condition:
+			\begin{equation*}
+				A_1\ A_2\ A_3 \ra B_1\ B_2\ B_3
+			\end{equation*}
+			where $A_i \neq B_j\ \forall i, j$. From given set of FDs we can find some, that follow from them and satisfy the non-triviality inequality:
+			\begin{align*}
+				AB &\ra D \\
+				C &\ra A	
+			\end{align*}
+
+			all other FDs, that follow from the given set have either not-single-value right part, or trivial.
+			\item[b)] The key for scheme by definition if a subset of its' attributes, that uniquely defines all other attributes in tuples. Also, key must satisfy the \emph{minimality} quality (i.e. if any of the items from key set will be removed that resulted subset will not uniquely define all attributes in schema tuples). 
+			\begin{equation*}
+				\set{A,B} - superkey		
+			\end{equation*}
+			\textbf{Proof:} lets compute the closure of $\set{A,B}$ which is $\set{A,B}^+ = \set{A,B,C,D}$, as $A\ B \ra C$ and $C \ra D$, thus $\set{A,B}$ is a superkey for schema R.
+			\begin{equation*}
+				\set{B,C} - superkey		
+			\end{equation*}	
+			\textbf{Proof:} using the same logic, compute $\set{B,C}^+ = \set{A,B,C,D}$, thus $\set{B,C}$ is a superkey for R.
+			\begin{equation*}
+				\set{C,D} -superkey
+			\end{equation*}	
+			\textbf{Proof:} using the same logic, compute $\set{B,D}^+ = \set{A,B,C,D}$, thus $\set{B,D}$ is a superkey for R.
+			\begin{align*}
+				\set{A,C}^+ &= \set{A,C,D} \\
+				\set{A,D}^+ &= \set{A,D} \\
+				\set{D,C}^+ &= \set{D,C,A} \\
+				\set{C,A,D}^+ &= \set{C,A,D}
+			\end{align*}
+			all above equations state that there are no more duplets or triplets (not including found duplets), that are superkeys.
+
+			By computing the closures $\set{A}^+ = \set{A},\ \set{B}^+=\set{B},\ \set{C}^+=\set{C,D,A},\ \set{D}^+=\set{D,A}$, we get that none of the subsets of found superkeys are superkeys, thus found superkeys are keys. \qed 
+			\item[c)] since in \textbf{b)} we have found all the keys of schema R, all we need is to add attributes to those sets in order to create bigger sets, already containing keys:
+			\begin{align*}
+				\set{A,B,C} \\
+				\set{A,B,D} \\
+				\set{B,C,D} \\
+				\set{A,B,C,D}
+			\end{align*}
+			all of those are superkeys of schema R, as they contain keys. There are no more ways of creating triplets are quadruplets of attributes, that will contain at least one key therefor there no more superkeys.
+		\end{description}
+	\end{answer}
+
+	\newpage
+	\begin{problem}[Exercise 3.2.10 b (page 85) from Ullman and Widom: A First Course in Database Systems]
+		Suppose we have relation $R(A,B,C,D,E)$, with some set of FD's, and we wish to project those FD's onto relation $S(A,B,C)$. Give the FD's that hold on S if the FD's for $R$ are
+		\begin{description}
+			\item[b)]
+			\begin{align*}
+			 	A &\ra D \\
+			 	BD &\ra E \\
+			 	AC &\ra E \\
+			 	DE &\ra B
+			\end{align*} 
+		\end{description}
+	\end{problem}
+	\begin{answer}
+		In order to find FD's projection from scheme $R$ to relation $S$, if to follow the algorithm:
+		\begin{enumerate}
+			\item Let T be the eventual output set of FD's. Initially, T is empty.
+			\item For each set of attributes X that is a subset of the attributes of $S$ compute $X^+$. This computation is performed with respect to the FD's of $R$, and may involve attributes that are in the schema of $R$ but not in $S$. Add to T all non-trivial FD's $X \ra A$, such that A if both in $X^+$ and an attribute of $S$.
+			\item Not T is a basis for the FD's that hold in $S$, but might be not a minimal one. Perform basis minimization.
+		\end{enumerate}
+
+		Following the described algorithm, we get the following steps.
+
+		\begin{align*}
+			T &= \set{} \\
+			\set{A}^+ &= \set{A,D} \\
+			T &= \set{} \\
+			\set{B}^+ &= \set{B} \\
+			T &= \set{} \\
+			\set{C}^+ &= \set{C} \\
+			T &= \set{} \\
+			\set{A,B}^+ &= \set{A,B,D,E} \\
+			T &= \set{} \\ 
+			\set {A,C}^+ &= \set{A,D,C,E,B} \\
+			T &= \set{AC \ra B} \\
+			\set{B,C}^+ &= \set{B,C} \\
+			T &= \set{AC \ra B} \\
+			\set{A,B,C}^+ &= \set{A,D,C,D,E} \\
+			T &= \set{AC \ra B}
+		\end{align*}
+
+		therefor, the only non-trivial functional dependency, that holds for relation $S$ is $CA \ra B$.
+	\end{answer}
+	
+	\newpage
+	\begin{problem}[Briefly explain the common anomalies we want to avoid in databases.]
+	\end{problem}
+	\begin{answer}
+		\begin{itemize}
+			\item \emph{Redundancy}. Information may be repeated unnecessarily in several tuples.
+			\item \emph{Update anomalies}. One can change information in one tuple, but leave the same information unchanged in another, therefor creating an ambiguity.
+			\item \emph{Deletion anomalies}. If a set of values becomes empty, one may lose other information as a side effect.
+		\end{itemize}
+	\end{answer}
+
+	\begin{problem}[How can we check whether a relation is in BCNF?]
+	\end{problem}
+	\begin{answer}
+		A relation $R$ is in BCNF if and only if whenever there is a nontrivial FD $A_1 A_2 \dots A_n \ra B_1 B_2 \dots B_m$ for $R$, it is the case, that $\set{A_1, A_2, \dots, A_n}$ is a superkey for $R$
+	\end{answer}
+
+	\begin{problem}[What are the properties of BCNF decomposition?]
+	\end{problem}
+	\begin{answer}
+		\begin{enumerate}
+			\item After the decomposition all new relations are in BCNF.
+			\item The original data can be reconstructed exactly from the decomposed relation instances.
+		\end{enumerate}
+	\end{answer}
+
+	\newpage
+	\begin{problem}[Exercise 3.3.1 c (page 92) from Ullman and Widom: A First Course in Database Systems]
+		For each of the following relations schemas and sets of FD's
+		\begin{description}
+			\item[c)] $R(A,B,C,D)$ with FD's $AB \ra C,\ BC \ra D, CD \ra A$ and $AD \ra B$.
+		\end{description}
+		do the following:
+		\begin{enumerate}
+			\item Indicate all the BCNF violations. Do not forget to consider FD's that are not in the given set, but follow from them. However, it is not necessary to give violations that have more than one attribute on the right side.
+			\item Decompose the relations, as necessary, into collections of relations that are in BCNF.
+		\end{enumerate}
+	\end{problem}
+	\begin{answer}
+		First, lets us compute closures of left side sets, to see, which of those are the superkeys if given schema, and do not violate the BCNF.
+		\begin{align*}
+			\set{A,B}^+ &= \set{A,B,C,D} \\
+			\set{B,C}^+ &= \set{B,C,D,A} \\
+			\set{C,D}^+ &= \set{C,D,A,B} \\
+			\set{A,D}^+ &= \set{A,D,B,C}
+		\end{align*}
+		as we can see, \textbf{all} of the left side subsets of attributes are superkeys of the given schema, therefore there are no violations of BCNF condition in the given set of FD's.
+		\begin{enumerate}
+			\item 0
+		\end{enumerate}
+
+		for the decomposing purposes I will go with choosing $\set{A,B}$ as key, forgetting about all other key, therefor, decomposing schema $R(A,B,C,D)$ into two schemas:
+		\begin{enumerate}
+			\setcounter{enumi}{1}
+			\item \begin{align*}
+					R_{1}&(A,B,C) \\
+					R_{2}&(A,B,D) \\
+				  \end{align*}
+		\end{enumerate}
+		
+		we can not decompose it any more, as there are no singletons defining anything but themselves. Thus only doubletones can be used to uniquely identify anything but themselves, which we have implemented already.
+
+	\end{answer}
+\end{document}

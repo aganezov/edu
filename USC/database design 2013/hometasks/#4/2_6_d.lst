@@ -1,0 +1,26 @@
+SQL> select * from orders;
+
+       ONO        CNO        ENO RECIEVED  SHIPPED                              
+---------- ---------- ---------- --------- ---------                            
+      1022       2222       1001 13-FEB-95 20-FEB-95                            
+      1020       1111       1000 10-DEC-94 12-DEC-94                            
+      1021       1111       1000 12-JAN-95 15-JAN-95                            
+      1023       3333       1000 20-JUN-97                                      
+
+SQL> start 2_6_d
+
+3 rows updated.
+
+SQL> select * from orders;
+
+       ONO        CNO        ENO RECIEVED  SHIPPED                              
+---------- ---------- ---------- --------- ---------                            
+      1022       2222       1001 13-FEB-95 20-FEB-95                            
+      1020       1111       1001 10-DEC-94 12-DEC-94                            
+      1021       1111       1001 12-JAN-95 15-JAN-95                            
+      1023       3333       1001 20-JUN-97                                      
+
+SQL> rollback
+  2  ;
+
+Rollback complete.

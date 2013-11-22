@@ -1,0 +1,100 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{tikz}
+
+\newcommand{\union}[2]{#1 \bigcup #2}
+\newcommand{\intersection}[2]{#1 \bigcap #2}
+\newcommand{\difference}[2]{#1 \setminus #2}
+\newcommand{\selection}[2]{\sigma_{#1}\left(#2\right)}
+\newcommand{\projection}[2]{\pi_{#1}\left(#2\right)}
+\newcommand{\carProd}[2]{#1 \times #2}
+\newcommand{\natJoin}[2]{#1 \Join #2}
+\newcommand{\thJoin}[3]{#1 \Join_{#3} #2}
+\newcommand{\rename}[3]{\rho_{#1(#2)}\left(#3\right)}
+
+
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#2$ \\ CSE 520 ``Database Management Systems'' \\ Fall 2013}
+\date{}
+
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Exercise 2.4.3: d, e, h (pages 55-57) from Ullman and Widom: A First Course in Database Systems
+
+
+		\textbf{d}: The treaty of Washington in 1921 prohibited capital ships heavier than 35000 tons. List the ships violated the treaty of Washington.
+
+		\begin{equation*}
+			\projection{name}{
+				\selection{country=USA\ \mathbf{AND}\ displacement > 35000}{
+					\natJoin{Ships}{Classes}
+				}
+			}
+		\end{equation*}
+
+		\textbf{e}: List the name, displacement, and number of guns for the ships engadged in the battle of Guadacanal.
+
+		\begin{align*}
+			draft\_r\_Battles &:= \rename{Battles}{battle\_name,\ date}{Battles} \\
+			r\_Battles &:= \selection{battle\_name=Guadalcanal}{draft\_r\_Battles} \\
+			r\_Outcomes &:= \rename{Outcomes}{ship\_name,\ battle\_name,\ result}{Outcomes} \\
+			r\_Ships &:= \rename{Ships}{ship\_name,\ class,\ launched}{Ships} \\
+			r\_BO &:= \natJoin{r\_Batles}{r\_Outcomes} \\
+			r\_BOS &:= \natJoin{r\_BO}{r\_Ships} \\
+			draft\_result &:= \natJoin{r\_BOS}{Classes} \\
+			result &:= \projection{ship\_name,\ displacement,\ numGuns}{draft\_result}
+		\end{align*}
+
+		\textbf{h}: Find those countries that had both battleships and battlecrusiers.
+
+		\begin{align*}
+			Classes\_temp &:= \projection{type,\ country}{Classes} \\
+			Classes\_1 &:= \rename{Classes\_temp}{type\_1,\ country\_1}{Classes\_temp} \\
+			Classes\_2 &:= \rename{Classes\_temp}{type\_2,\ country\_2}{Classes\_temp} \\
+			draf\_result &:= \thJoin{Classes\_1}{Classes\_2}{country\_1= country\_2\ \mathbf{AND}\ type\_1 \neq type\_2} \\
+			result &:= \projection{country\_1}{draft\_result} \\
+			%  \thJoin{}{}{  } \\ 
+		\end{align*}
+		% \begin{align*}
+			
+			% 
+			% 
+			% 
+		% \end{align*}
+
+		\pagebreak
+
+		\item Exercise 2.5.2: a, b, c (page 63) from Ullman and Widom: A First Course in Database Systems
+
+		\textbf{a}: No class of ships may have guns with larger than 16-inch bore.
+
+		\begin{equation*}
+			\selection{bore > 16}{Classes} = \emptyset
+		\end{equation*}
+
+		\textbf{b}: If a class of ships has more than 9 guns, then their bore must be no larger than 14 inches.
+
+		\begin{equation*}
+			\selection{numGums > 9\ \mathbf{AND}\ bore > 14}{Classes} = \emptyset
+		\end{equation*}
+
+		\textbf{c}: No class my have more than 2 ships
+
+		\begin{align*}
+			table &:= \projection{class,\ name}{Ships} \\
+			table\_1 &:= \rename{table}{class\_1,\ name\_1}{table} \\
+			table\_2 &:= \rename{table}{class\_2,\ name\_2}{table} \\
+			table\_3 &:= \rename{table}{class\_3, name\_3}{table} \\
+			f\_result &:= \thJoin{table\_1}{table\_2}{class\_1 = class\_2\ \mathbf{AND}\ name\_1\neq name\_2} \\
+			result &:= \thJoin{f\_result}{table\_3}{class\_1=class\_3\ \mathbf{AND}\ name\_1\neq name\_3\ \mathbf{AND}\ name\_2\neq name\_3} \\
+			result &:= \emptyset
+		\end{align*}
+	\end{enumerate}
+\end{document}

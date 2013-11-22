@@ -1,0 +1,82 @@
+SQL> select table_name from user_tables;
+
+no rows selected
+
+SQL> start create_zipcodes
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+
+SQL> start create_employees
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+EMPLOYEES                                                                       
+
+SQL> start create_parts
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+EMPLOYEES                                                                       
+PARTS                                                                           
+
+SQL> start create_customers
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+EMPLOYEES                                                                       
+PARTS                                                                           
+CUSTOMERS                                                                       
+
+SQL> start create_orders
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+EMPLOYEES                                                                       
+PARTS                                                                           
+CUSTOMERS                                                                       
+ORDERS                                                                          
+
+SQL> start create_odetails
+
+Table created.
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+ZIPCODES                                                                        
+EMPLOYEES                                                                       
+PARTS                                                                           
+CUSTOMERS                                                                       
+ORDERS                                                                          
+ODETAILS                                                                        
+
+6 rows selected.
+
+SQL> spool off
