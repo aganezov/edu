@@ -1,0 +1,312 @@
+SQL> select * from zipcodes;
+
+       ZIP CITY                                                                 
+---------- ---------------------------------------------                        
+     67226 Wichita                                                              
+     60606 Fort Dodge                                                           
+     50302 Kansas City                                                          
+     54444 Columbia                                                             
+     66002 Liberal                                                              
+     61111 Forst Hays                                                           
+
+6 rows selected.
+
+SQL> select * from employees;
+
+       ENO ENAME                                 ZIP HDATE                      
+---------- ------------------------------ ---------- ---------                  
+      1000 Jones                               67226 12-DEC-95                  
+      1001 Smith                               60606 01-JAN-92                  
+      1002 Brown                               50302 01-SEP-94                  
+
+SQL> select * from parts;
+
+       PNO PNAME                                 QOH      PRICE     OLEVEL      
+---------- ------------------------------ ---------- ---------- ----------      
+     10506 Land Before Time I                    200      19.99         20      
+     10507 Land Before Time II                   156      19.99         20      
+     10508 Land Before Time III                  190      19.99         20      
+     10509 Land Before Time IV                    60      19.99         20      
+     10601 Sleeping Beauty                       300      24.99         20      
+     10701 When Harry Met Sally                  120      19.99         30      
+     10800 Dirty Harry                           140      14.99         30      
+     10900 Dr. Zhivago                           100      24.99         30      
+
+8 rows selected.
+
+SQL> select * from customers;
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1111 Chrales                        123 main st.                          
+     67226 316-636-5555                                                         
+                                                                                
+      2222 Bertram                        237 Ash Ave.                          
+     67226 316-689-5555                                                         
+                                                                                
+      3333 Barbara                        111 Inwood St.                        
+     60606 316-111-1234                                                         
+                                                                                
+
+SQL> select * from orders;
+
+       ONO        CNO        ENO RECIEVED  SHIPPED                              
+---------- ---------- ---------- --------- ---------                            
+      1020       1111       1000 10-DEC-94 12-DEC-94                            
+      1021       1111       1000 12-JAN-95 15-JAN-95                            
+      1023       3333       1000 20-JUN-97                                      
+
+SQL> select * from odetails;
+
+       ONO        PNO        QTY                                                
+---------- ---------- ----------                                                
+      1020      10506          1                                                
+      1020      10507          1                                                
+      1020      10508          2                                                
+      1020      10509          3                                                
+      1021      10601          4                                                
+      1023      10800          1                                                
+      1023      10900          1                                                
+
+7 rows selected.
+
+SQL> start ha6/data_addtition
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> select * from zipcodes;
+
+       ZIP CITY                                                                 
+---------- ---------------------------------------------                        
+     67226 Wichita                                                              
+     60606 Fort Dodge                                                           
+     50302 Kansas City                                                          
+     54444 Columbia                                                             
+     66002 Liberal                                                              
+     61111 Forst Hays                                                           
+     27035 Ironton                                                              
+     38057 Stanton                                                              
+     56025 Arminto                                                              
+     16025 Fairfield                                                            
+     41071 Amity                                                                
+
+       ZIP CITY                                                                 
+---------- ---------------------------------------------                        
+     53033 Bothell                                                              
+
+12 rows selected.
+
+SQL> select * from employees;
+
+       ENO ENAME                                 ZIP HDATE                      
+---------- ------------------------------ ---------- ---------                  
+      1000 Jones                               67226 12-DEC-95                  
+      1001 Smith                               60606 01-JAN-92                  
+      1002 Brown                               50302 01-SEP-94                  
+      2000 2T                                  67226 01-DEC-96                  
+      2001 2To                                 60606 01-DEC-97                  
+      2002 2Tt                                 50302 01-DEC-98                  
+      2003 2Tth                                67226 01-DEC-95                  
+      2004 2Tf                                 60606 01-DEC-96                  
+      2005 2Tfi                                50302 01-DEC-97                  
+
+9 rows selected.
+
+SQL> select * from parts;
+
+       PNO PNAME                                 QOH      PRICE     OLEVEL      
+---------- ------------------------------ ---------- ---------- ----------      
+     10506 Land Before Time I                    200      19.99         20      
+     10507 Land Before Time II                   156      19.99         20      
+     10508 Land Before Time III                  190      19.99         20      
+     10509 Land Before Time IV                    60      19.99         20      
+     10601 Sleeping Beauty                       300      24.99         20      
+     10701 When Harry Met Sally                  120      19.99         30      
+     10800 Dirty Harry                           140      14.99         30      
+     10900 Dr. Zhivago                           100      24.99         30      
+     10000 T                                     200      19.99         20      
+     10001 To                                    156      19.99         20      
+     10002 Tt                                    190      19.99         20      
+
+       PNO PNAME                                 QOH      PRICE     OLEVEL      
+---------- ------------------------------ ---------- ---------- ----------      
+     10003 Tth                                    60      19.99         20      
+     10004 Tf                                    300      24.99         20      
+     10005 Tfi                                   120      19.99         30      
+     10006 Ts                                    140      14.99         30      
+     10007 Tse                                   100      24.99         30      
+
+16 rows selected.
+
+SQL> select * from customers;
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1111 Chrales                        123 main st.                          
+     67226 316-636-5555                                                         
+                                                                                
+      2222 Bertram                        237 Ash Ave.                          
+     67226 316-689-5555                                                         
+                                                                                
+      3333 Barbara                        111 Inwood St.                        
+     60606 316-111-1234                                                         
+                                                                                
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1000 T                              1000 main st.                         
+     67226 316-636-1000                                                         
+                                                                                
+      1001 To                             1001 main st.                         
+     67226 316-636-1001                                                         
+                                                                                
+      1002 Tt                             1002 main st.                         
+     67226 316-636-1002                                                         
+                                                                                
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1003 Tth                            1003 main st.                         
+     67226 316-636-1003                                                         
+                                                                                
+      1004 Tf                             1004 main st.                         
+     67226 316-636-1004                                                         
+                                                                                
+      1005 Tfi                            1005 main st.                         
+     67226 316-636-1005                                                         
+                                                                                
+
+9 rows selected.
+
+SQL> select * from orders;
+
+       ONO        CNO        ENO RECIEVED  SHIPPED                              
+---------- ---------- ---------- --------- ---------                            
+      1020       1111       1000 10-DEC-94 12-DEC-94                            
+      1021       1111       1000 12-JAN-95 15-JAN-95                            
+      1023       3333       1000 20-JUN-97                                      
+      1000       1000       2000 01-DEC-94 12-DEC-94                            
+      1001       1001       2001 01-DEC-95 15-JAN-95                            
+      1002       1002       2002 01-DEC-95 20-FEB-95                            
+      1003       1003       2003 01-DEC-97 02-DEC-97                            
+      1004       1004       2004 01-DEC-95 20-FEB-95                            
+      1005       1005       2005 01-DEC-97                                      
+
+9 rows selected.
+
+SQL> select * from odetails;
+
+       ONO        PNO        QTY                                                
+---------- ---------- ----------                                                
+      1020      10506          1                                                
+      1020      10507          1                                                
+      1020      10508          2                                                
+      1020      10509          3                                                
+      1021      10601          4                                                
+      1023      10800          1                                                
+      1023      10900          1                                                
+
+7 rows selected.
+
+SQL> spool off
