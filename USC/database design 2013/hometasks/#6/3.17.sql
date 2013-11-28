@@ -1,7 +1,7 @@
 set serveroutput on;
-accept ac number(3) promt 'Enter area code: '
+accept ac number prompt 'Enter area code: '
 declare
-area_code number(3) := &ac;
+area_code number := &ac;
 procedure area(area_code in number)
 is
 begin
