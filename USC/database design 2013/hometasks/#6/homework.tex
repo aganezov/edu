@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{tikz}
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#6$ \\ CSE 520 ``Database Management Systems'' \\ Fall 2013}
+\date{}
+
+\newenvironment{problem}[1][\unskip]%
+{\centering\textbf{ #1}%
+\vspace{0.5cm}
+\begin{em}}%
+{\end{em}}
+
+\newenvironment{answer}%
+{\begin{framed}%
+\vspace{0.5cm}}%
+{\end{framed}\vspace{0.5cm}}
+
+\lstdefinestyle{customSQL}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  % frame=L,
+  xleftmargin=\parindent,
+  language=SQL,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!blue},
+  commentstyle=\itshape\color{black!40},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\begin{problem}[ Insert 5-10 additional tuples into each relation of the Mail Order Database (From Oracle 10G Programming: A Primer text book)]
+	\end{problem}	
+	\begin{answer}
+		Using the \textbf{.sql} file \emph{data\_addition.sql} with content:
+		\lstinputlisting[language=SQL, style=customSQL]{data_addition.sql}
+
+		we can achieve the stated goal (this is going to be a long listing):
+		\lstinputlisting[language=SQL, style=customSQL]{data_addition.lst}
+
+		and yes, the script name is \emph{data\_addtition.sql} was a typo at the time of execution, fixed only during report preparation.
+
+		and yes, the \emph{odetails} table was not populated with additional data, as it is really hard to keep in mind both reference number in mind and make  
+	\end{answer}
+	\begin{problem}[Write Pl/SQL procedure that performs an update of zip code value. It takes the old and new values of the zip code and changes all occurrences of the old value to the new throughout the database.]
+	\end{problem}
+	\begin{answer}
+		the described procedure is defined in the anonymous block, that is described in file \textbf{3.2.sql}:
+		\lstinputlisting[language=SQL, style=customSQL]{3.2.sql}
+
+		the following listing shows that described procedure successfully works:
+		\lstinputlisting[language=SQL, style=customSQL]{3.2.lst}
+	\end{answer}
+	\begin{problem}[Write PL/SQL anonymous block that prompts the user for an area code and prints the names and addresses of all customers who have at least one phone number with that particular area code.]
+	\end{problem}
+	\begin{answer}
+		described block is written in file \textbf{3.17.sql}:
+		\lstinputlisting[language=SQL, style=customSQL]{3.17.sql}
+
+		and listing that demonstrates the correct workflow of given block is shown with the following listing:
+		\lstinputlisting[language=SQL, style=customSQL]{3.17.lst}
+	\end{answer}
+\end{document}
