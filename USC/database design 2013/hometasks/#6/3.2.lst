@@ -1,0 +1,83 @@
+SQL> select * from zipcodes;
+
+       ZIP CITY                                                                 
+---------- ---------------------------------------------                        
+     67226 Wichita                                                              
+     60606 Fort Dodge                                                           
+     50302 Kansas City                                                          
+     54444 Columbia                                                             
+     66002 Liberal                                                              
+     61111 Forst Hays                                                           
+
+6 rows selected.
+
+SQL> select * from employees;
+
+       ENO ENAME                                 ZIP HDATE                      
+---------- ------------------------------ ---------- ---------                  
+      1000 Jones                               67226 12-DEC-95                  
+      1001 Smith                               60606 01-JAN-92                  
+      1002 Brown                               50302 01-SEP-94                  
+
+SQL> select * from customers;
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1111 Chrales                        123 main st.                          
+     67226 316-636-5555                                                         
+                                                                                
+      2222 Bertram                        237 Ash Ave.                          
+     67226 316-689-5555                                                         
+                                                                                
+      3333 Barbara                        111 Inwood St.                        
+     60606 316-111-1234                                                         
+                                                                              
+
+SQL> start ha6/3.2.sql
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from zipcodes;
+
+       ZIP CITY                                                                 
+---------- ---------------------------------------------                        
+     60606 Fort Dodge                                                           
+     50302 Kansas City                                                          
+     54444 Columbia                                                             
+     66002 Liberal                                                              
+     67225 Wichita                                                              
+     61112 Forst Hays                                                           
+
+6 rows selected.
+
+SQL> select * from employees;
+
+       ENO ENAME                                 ZIP HDATE                      
+---------- ------------------------------ ---------- ---------                  
+      1000 Jones                               67225 12-DEC-95                  
+      1001 Smith                               60606 01-JAN-92                  
+      1002 Brown                               50302 01-SEP-94                  
+
+SQL> select * from customers;
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1111 Chrales                        123 main st.                          
+     67225 316-636-5555                                                         
+                                                                                
+      2222 Bertram                        237 Ash Ave.                          
+     67225 316-689-5555                                                         
+                                                                                
+      3333 Barbara                        111 Inwood St.                        
+     60606 316-111-1234                                                         
+                                                                                
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> spool off

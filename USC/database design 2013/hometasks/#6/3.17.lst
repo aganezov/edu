@@ -1,0 +1,34 @@
+SQL> select * from customers;
+
+       CNO CNAME                          STREET                                
+---------- ------------------------------ ------------------------------        
+       ZIP PHONE                                                                
+---------- ------------                                                         
+      1111 Chrales                        123 main st.                          
+     67226 316-636-5555                                                         
+                                                                                
+      2222 Bertram                        237 Ash Ave.                          
+     67226 316-689-5555                                                         
+                                                                                
+      3333 Barbara                        111 Inwood St.                        
+     60606 316-111-1234                                                         
+                                                                                
+
+SQL> start ha6/3.17.sql
+Enter area code: 316
+old   2: area_code number := &ac;
+new   2: area_code number :=        316;
+Chrales  123 main st.                                                           
+Bertram  237 Ash Ave.                                                           
+Barbara  111 Inwood St.                                                         
+
+PL/SQL procedure successfully completed.
+
+SQL> start ha6/3.17.sql
+Enter area code: 315
+old   2: area_code number := &ac;
+new   2: area_code number :=        315;
+
+PL/SQL procedure successfully completed.
+
+SQL> spool off
