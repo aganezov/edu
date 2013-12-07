@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{tikz}
+
+\author{Sergey Aganezov}
+\title{Homework assignment $\#6$ \\ CSE 520 ``Database Management Systems'' \\ Fall 2013}
+\date{}
+
+\newenvironment{problem}[1][\unskip]%
+{\centering\textbf{ #1}%
+\vspace{0.5cm}
+\begin{em}}%
+{\end{em}}
+
+\newenvironment{answer}%
+{\begin{framed}%
+\vspace{0.5cm}}%
+{\end{framed}\vspace{0.5cm}}
+
+\lstdefinestyle{customSQL}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  % frame=L,
+  xleftmargin=\parindent,
+  language=SQL,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!blue},
+  commentstyle=\itshape\color{black!40},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+\end{document}
